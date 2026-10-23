@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Public API"><UniqueIdentifier>{AEB19693-BA48-4C64-B67F-6BC10C946333}</UniqueIdentifier></Filter>
+    <Filter Include="Implementation"><UniqueIdentifier>{1053C6DE-5B3A-4B86-A9DE-690783365231}</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\MatanelPDB.h"><Filter>Public API</Filter></ClInclude>
+    <ClInclude Include="src\common\Bytes.h"><Filter>Implementation</Filter></ClInclude>
+    <ClInclude Include="src\pe\PeImage.h"><Filter>Implementation</Filter></ClInclude>
+    <ClInclude Include="src\pe\Rsds.h"><Filter>Implementation</Filter></ClInclude>
+    <ClInclude Include="src\msf\msf.h"><Filter>Implementation</Filter></ClInclude>
+    <ClInclude Include="src\pdb\PdbInfo.h"><Filter>Implementation</Filter></ClInclude>
+    <ClInclude Include="src\pdb\Dbi.h"><Filter>Implementation</Filter></ClInclude>
+    <ClInclude Include="src\pdb\Tpi.h"><Filter>Implementation</Filter></ClInclude>
+    <ClCompile Include="src\pe\PeImage.cpp"><Filter>Implementation</Filter></ClCompile>
+    <ClCompile Include="src\pe\Rsds.cpp"><Filter>Implementation</Filter></ClCompile>
+    <ClCompile Include="src\msf\msf.cpp"><Filter>Implementation</Filter></ClCompile>
+    <ClCompile Include="src\pdb\PdbInfo.cpp"><Filter>Implementation</Filter></ClCompile>
+    <ClCompile Include="src\pdb\Dbi.cpp"><Filter>Implementation</Filter></ClCompile>
+    <ClCompile Include="src\pdb\Tpi.cpp"><Filter>Implementation</Filter></ClCompile>
+    <None Include="README.md" />
+  </ItemGroup>
+</Project>

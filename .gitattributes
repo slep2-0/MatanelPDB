@@ -1,0 +1,5 @@
+* text=auto
+*.slnx text eol=crlf
+*.vcxproj text eol=crlf
+*.filters text eol=crlf
+*.inf text eol=crlf

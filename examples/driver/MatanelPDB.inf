@@ -1,0 +1,62 @@
+;
+; MatanelPDB.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = MatanelPDB.cat
+DriverVer   = ; TODO: set DriverVer in stampinf property pages
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+MatanelPDB.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%MatanelPDB.DeviceDesc% = MatanelPDB_Device, Root\MatanelPDB ; TODO: edit hw-id
+
+[MatanelPDB_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+MatanelPDB.sys
+
+;-------------- Service installation
+[MatanelPDB_Device.NT.Services]
+AddService = MatanelPDB,%SPSVCINST_ASSOCSERVICE%, MatanelPDB_Service_Inst
+
+; -------------- MatanelPDB driver install sections
+[MatanelPDB_Service_Inst]
+DisplayName    = %MatanelPDB.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\MatanelPDB.sys
+
+[MatanelPDB_Device.NT.Wdf]
+KmdfService = MatanelPDB, MatanelPDB_wdfsect
+
+[MatanelPDB_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "MatanelPDB Installation Disk"
+MatanelPDB.DeviceDesc = "MatanelPDB Device"
+MatanelPDB.SVCDESC = "MatanelPDB Service"

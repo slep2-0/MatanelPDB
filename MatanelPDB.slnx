@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="examples/diagnostic/MatanelPDBDiagnostic.vcxproj" Id="c3c59636-9f89-40ef-a2f5-0bfe0b9b2cb5" />
+  <Project Path="MatanelPDB.vcxproj" Id="51076f9d-e4a4-4500-8f73-eef42ec9e290" />
+</Solution>
